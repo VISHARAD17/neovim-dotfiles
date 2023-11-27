@@ -32,4 +32,4 @@ require('nvim-treesitter').setup( {
 })
 
 
-print("------------- Visharad NVIM-----------------")
+print("------------- Visharad NVIM started -----------------")
