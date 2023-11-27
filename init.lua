@@ -25,4 +25,11 @@ require('diagnostics')
 require('nvim-tree').setup()
 require('Comment').setup()
 
+require('nvim-treesitter').setup( {
+  autotag = {
+    enable = true,
+  }
+})
+
+
 print("------------- Visharad NVIM-----------------")
