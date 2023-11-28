@@ -16,8 +16,9 @@ require('autopairs-config')
 require('toggleterm-config')
 require('telescope-config')
 require('lsp-config')
+require('gitsigns-config')
 
--- diagnostics msgs
+-- diagnostics msgs ( no hints )
 require('diagnostics')
 
 
@@ -31,5 +32,3 @@ require('nvim-treesitter').setup( {
   }
 })
 
-
-print("------------- Visharad NVIM started -----------------")
