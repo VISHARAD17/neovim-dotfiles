@@ -131,6 +131,7 @@ local mappings = {
         -- Play with size according to your needs.
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" }, -- Horizontal Terminal,
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" }, -- Vertical Terminal
+        vs = {"<cmd>ToggleTerm size=40 direction=horizontal<cr>", "split vertical"} -- vertical split
     },
     --Git
     g = {

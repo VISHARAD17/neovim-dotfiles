@@ -9,6 +9,17 @@ end
 local actions = require("telescope.actions")
 require('telescope').setup{
   defaults = {
+        vimgrep_arguments = {
+            '--hidden',
+            '--no-heading',
+            '--line-number',
+            '--smart-case',
+            '--column',
+            'rg',
+        },
+        file_ignore_patterns = {
+            'node_modules',
+        },
     -- Default configuration for telescope goes here:
     -- config_key = value,
 
