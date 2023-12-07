@@ -3,7 +3,7 @@
 local configs = require("nvim-treesitter.configs")
 configs.setup {
   -- Add a language of your choice
-  ensure_installed = {"cpp", "python", "lua", "java", "javascript", },
+  ensure_installed = {"cpp", "python", "lua", "java", "javascript", "typescript", "html" },
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
@@ -22,3 +22,10 @@ configs.setup {
     -- termcolors = {} -- table of colour name strings
   }
 }
+
+-- code folding
+local opt = vim.opt 
+
+opt.foldmethod = 'expr'
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldenable = false

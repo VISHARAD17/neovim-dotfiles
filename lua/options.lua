@@ -48,9 +48,3 @@ opt.wrap = true-- Disable line wrap
 vim.g.markdown_recommended_style = 0
 -- vim.cmd[[":colorscheme habamax"]]
 -- vim.cmd "colorscheme habamax" 
-
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldlevel = 99
-
-
