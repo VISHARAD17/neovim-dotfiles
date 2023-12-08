@@ -6,12 +6,11 @@ lsp.preset('recommended')
 local mason = require('mason')
 mason.setup({
     ensure_installed = {
-        "mypy",
         "pyright",
         "ruff",
         "tsserver",
         "eslint",
-        "sumneko_lua",
+        "lua_ls",
 }
 })
 
@@ -72,6 +71,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local lspconfig = require('lspconfig')
 
 lspconfig.pyright.setup{}
+lspconfig.eslint.setup{}
+lspconfig.lua_ls.setup{}
 
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()

@@ -10,7 +10,7 @@ require('whichkey-config')
 require('lualine-config')
 require('nvim-tree-config')
 require('treesitter-config')
-require('colorscheme')
+-- require('colorscheme')
 require('bufferline-config')
 require('autopairs-config')
 require('toggleterm-config')
@@ -32,3 +32,5 @@ require('nvim-treesitter').setup( {
   }
 })
 
+require("nvim-surround").setup()
+require('mini.indentscope').setup()
