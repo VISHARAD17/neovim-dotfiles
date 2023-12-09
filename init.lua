@@ -1,5 +1,5 @@
--- importing from lua directory all the configs related to the plugins 
--- file explorer 
+-- importing from lua directory all the configs related to the plugins
+-- file explorer
 
 require('options')
 require('keymaps')
@@ -13,7 +13,6 @@ require('treesitter-config')
 -- require('colorscheme')
 require('bufferline-config')
 require('autopairs-config')
-require('toggleterm-config')
 require('telescope-config')
 require('lsp-config')
 require('gitsigns-config')
@@ -26,10 +25,10 @@ require('diagnostics')
 require('nvim-tree').setup()
 require('Comment').setup()
 
-require('nvim-treesitter').setup( {
-  autotag = {
-    enable = true,
-  }
+require('nvim-treesitter').setup({
+    autotag = {
+        enable = true,
+    }
 })
 
 require("nvim-surround").setup()
