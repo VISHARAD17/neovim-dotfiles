@@ -82,7 +82,6 @@ local opts = {
 
 local mappings = {
 
-    ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },     -- Close current file
     ["m"] = { "<cmd>Mason<cr>", "Mason" },             -- LSP Manager
@@ -91,16 +90,14 @@ local mappings = {
     ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
     ["w"] = { "<cmd>w!<CR>", "Save" },                 -- Save current file
 
-    -- Language Support
+    -- -- Language Support
     l = {
         name = "LSP",
-        i = { "<cmd>LspInfo<cr>", "Info" },
-        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration"}, -- open lsp declaration
+        d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "definition"}, -- go to defination
+        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" }, -- rename the variable
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-        S = {
-            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-            "Workspace Symbols",
-        },
+        i = { "<cmd>LspInfo<cr>", "Info" },
     },
 
     -- Telescope
@@ -130,14 +127,11 @@ local mappings = {
         r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
         R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
         s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-        u = {
-            "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-            "Undo Stage Hunk",
-        },
+        u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk"},
         o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
         c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-        d = {
+        f = {
             "<cmd>Gitsigns diffthis HEAD<cr>",
             "Diff",
         },
