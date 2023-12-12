@@ -1,4 +1,4 @@
-### .dotfile for my nvim config 
+### .dotfile for my NeoVIM config 
 I use vim btw 
 
 Main plugins used for this config 
@@ -8,7 +8,9 @@ Main plugins used for this config
 - toggleterm
 - bufferline
 - lualine
-- oxocarbon theme 
+- github dark theme 
 - git-signs 
 - treesitter 
+- comment.nvim 
+- whichkey
 - telescope 
