@@ -108,5 +108,5 @@ return {
     },
 
     -- indent lines
-    { 'echasnovski/mini.nvim', version = '*' },
+    { 'echasnovski/mini.indentscope', version = '*' },
 }
