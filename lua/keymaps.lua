@@ -1,9 +1,7 @@
-local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
-
--- Shorten function name
+-- local variables
 local keymap = vim.api.nvim_set_keymap
+local term_opts = { silent = true }
+local opts = { noremap = true, silent = true }
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -25,6 +23,7 @@ keymap("n", "<C-k>", "<C-w>k", opts) -- up window
 keymap("n", "<C-j>", "<C-w>j", opts) -- down window
 keymap("n", "<C-l>", "<C-w>l", opts) -- right window
 
+     -- INSERT  --
 ---- keymaps for navigation in insert mode
 keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
@@ -45,15 +44,16 @@ keymap("n", "<s-tab>", ":bprevious<cr>", opts) -- Previous tab
 keymap("n", "<leader>h", ":nohlsearch<cr>", opts) -- No highlight search
 
 -- move text up and down
-keymap("n", "<a-j>", "<esc>:m .+1<cr>==gi", opts) -- Alt-j 
-keymap("n", "<a-k>", "<esc>:m .-2<cr>==gi", opts) -- Alt-k
+-- Note : this does not work in mac need to have linux or windows
+-- keymap("n", "<a-j>", "<esc>:m .+1<cr>==gi", opts) -- Alt-j 
+-- keymap("n", "<a-k>", "<esc>:m .-2<cr>==gi", opts) -- Alt-k
 
 -- insert --
 -- press jk fast to exit insert mode 
 keymap("i", "jk", "<esc>", opts) -- Insert mode -> jk -> Normal mode
 keymap("i", "kj", "<esc>", opts) -- Insert mode -> kj -> Normal mode
 
--- visual --
+-- Visual Block -------
 -- stay in indent mode
 keymap("v", "<", "<gv", opts) -- Right Indentation
 keymap("v", ">", ">gv", opts) -- Left Indentation
@@ -62,8 +62,6 @@ keymap("v", ">", ">gv", opts) -- Left Indentation
 keymap("v", "<S-j>", ":m .+1<cr>==", opts)
 keymap("v", "<S-k>", ":m .-2<cr>==", opts)
 
--- Visual Block --
--- Move text up and down
     --Terminal --
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
