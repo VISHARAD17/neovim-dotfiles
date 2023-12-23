@@ -25,11 +25,11 @@ require('diagnostics')
 require('nvim-tree').setup()
 require('Comment').setup()
 
-require('nvim-treesitter').setup({
-    autotag = {
-        enable = true,
-    }
-})
-
+-- require('nvim-treesitter').setup()
+-- require("nvim-treesitter.configs").setup{
+--     autotag = {
+--         enable = true,
+--     }
+-- }
 require("nvim-surround").setup()
 require('mini.indentscope').setup()

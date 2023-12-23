@@ -1,10 +1,10 @@
 vim.diagnostic.config({
-  virtual_text = false,
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = true,
-  float = {
+    virtual_text = false,
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = true,
+    float = {
         source = "always",
     }
 })
@@ -32,14 +32,14 @@ vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {f
 --   }
 -- )
 --
--- -- local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
 -- local signs = { Error = "󰅚 ", Warn = "󰀪 ", Info = " " }
 --
--- for type, icon in pairs(signs) do
---   local hl = "DiagnosticSign" .. type
---   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
--- end
---
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 -- function PrintDiagnostics(opts, bufnr, line_nr, client_id)
 --   bufnr = bufnr or 0
 --   line_nr = line_nr or (vim.api.nvim_win_get_cursor(0)[1] - 1)

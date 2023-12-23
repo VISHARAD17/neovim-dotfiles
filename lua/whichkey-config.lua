@@ -98,6 +98,7 @@ local mappings = {
         r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" }, -- rename the variable
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         i = { "<cmd>LspInfo<cr>", "Info" },
+        a = { "<cmd> lua vim.lsp.buf.code_action()<cr>", "Code action"}, -- show available code actions
     },
 
     -- Telescope
