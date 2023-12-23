@@ -15,7 +15,7 @@ return {
 
     -- treesitter
     {
-       "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" 
+       "nvim-treesitter/nvim-treesitter", build = ":TSUpdate"
     },
 
     -- nvim tree ( file explorer)
@@ -111,12 +111,24 @@ return {
     -- indent lines
     { 'echasnovski/mini.indentscope', version = '*' },
 
+    -- coloscheme 
     { "rebelot/kanagawa.nvim",
         lazy = false,
         config = function ()
             require("kanagawa").setup({})
             vim.cmd("colorscheme kanagawa-dragon")
         end
-
     },
+
+    -- trouble 
+    {
+        "folke/trouble.nvim",
+
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+    }
 }

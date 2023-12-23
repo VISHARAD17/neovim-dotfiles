@@ -89,6 +89,7 @@ local mappings = {
     ["q"] = { "<cmd>wqall!<CR>", "Quit" },             -- Quit Neovim after saving the file
     ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
     ["w"] = { "<cmd>w!<CR>", "Save" },                 -- Save current file
+    ["t"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "trouble in current file"}, -- problems in current file 
 
     -- -- Language Support
     l = {
