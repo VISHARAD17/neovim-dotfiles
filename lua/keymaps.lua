@@ -48,10 +48,6 @@ keymap("n", "<leader>h", ":nohlsearch<cr>", opts) -- No highlight search
 -- keymap("n", "<a-j>", "<esc>:m .+1<cr>==gi", opts) -- Alt-j 
 -- keymap("n", "<a-k>", "<esc>:m .-2<cr>==gi", opts) -- Alt-k
 
--- insert --
--- press jk fast to exit insert mode 
-keymap("i", "jk", "<esc>", opts) -- Insert mode -> jk -> Normal mode
-keymap("i", "kj", "<esc>", opts) -- Insert mode -> kj -> Normal mode
 
 -- Visual Block -------
 -- stay in indent mode
