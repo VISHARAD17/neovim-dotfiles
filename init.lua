@@ -32,4 +32,3 @@ require('Comment').setup()
 --     }
 -- }
 require("nvim-surround").setup()
-require('mini.indentscope').setup()

@@ -48,4 +48,6 @@ opt.wrap = true-- Disable line wrap
 vim.g.markdown_recommended_style = 0
 -- vim.cmd[[":colorscheme habamax"]]
 -- vim.cmd "colorscheme habamax" 
-vim.opt.background = "dark"
+-- vim.opt.background = "dark"
+-- vim.cmd('hi Normal guibg=#4d423d ctermbg=#4d423d')
+vim.api.nvim_command('hi Normal guibg=#4d423d ctermbg=235')

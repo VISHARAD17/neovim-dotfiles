@@ -27,17 +27,43 @@ return {
         },
     },
 
-    -- colorscheme
+    -- colorScheme
     {
-        'projekt0n/github-nvim-theme',
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000, -- make sure to load this before all the other start plugins
+        'Mofiqul/vscode.nvim',
+        lazy = false,
+        priority = 1000,
         config = function()
-            require('github-theme').setup({
-                -- ...
-            })
+            -- vim.o.background = 'dark'
+            -- For light theme
+            -- vim.o.background = 'light'
 
-            vim.cmd('colorscheme github_dark_default')
+            local c = require('vscode.colors').get_colors()
+            require('vscode').setup({
+                -- Alternatively set style in setup
+                style = 'dark',
+
+                -- Enable transparent background
+                transparent = false,
+
+                -- Enable italic comment
+                italic_comments = false,
+
+                -- Disable nvim-tree background color
+                disable_nvimtree_bg = false,
+
+                -- Override colors (see ./lua/vscode/colors.lua)
+                -- color_overrides = {
+                --     vscLineNumber = '#FFFFFF',
+                -- },
+
+                -- Override highlight groups (see ./lua/vscode/theme.lua)
+                group_overrides = {
+                    -- this supports the same val table as vim.api.nvim_set_hl
+                    -- use colors from this colorscheme by requiring vscode.colors!
+                    Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+                }
+            })
+            require('vscode').load()
         end,
     },
 
@@ -84,7 +110,7 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
-    -- nvim-surround ( Manipulating plugins )
+    -- nvim-surround
     {
         "kylechui/nvim-surround",
         config = function()
@@ -108,17 +134,12 @@ return {
         "lewis6991/gitsigns.nvim",
     },
 
-    -- indent lines
-    { 'echasnovski/mini.indentscope', version = '*' },
-
-    -- coloscheme 
-    -- { "rebelot/kanagawa.nvim",
-    --     lazy = false,
-    --     config = function ()
-    --         require("kanagawa").setup({})
-    --         vim.cmd("colorscheme kanagawa-dragon")
-    --     end
-    -- },
+    -- indentation lines
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {},
+        config = function ()
+            require('ibl').setup()
+        end
+    },
 
     -- trouble 
     {
