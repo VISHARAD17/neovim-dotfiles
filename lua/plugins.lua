@@ -1,7 +1,7 @@
 -- all plugins repo links
 return {
 
-    --- which key
+    --- which key ( shows key shortcuts )
     {
         "folke/which-key.nvim",
         lazy = true,
@@ -104,7 +104,7 @@ return {
         }
     },
 
-    -- telescope
+    -- telescope ( fuzzy finder for file or text searching )
     {
         'nvim-telescope/telescope.nvim', tag='0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' }
@@ -141,7 +141,7 @@ return {
         end
     },
 
-    -- trouble 
+    -- trouble
     {
         "folke/trouble.nvim",
 
