@@ -73,7 +73,7 @@ return {
         dependencies = 'nvim-tree/nvim-web-devicons'
     },
 
-    -- Autopais
+    -- Autopairs
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
@@ -135,13 +135,14 @@ return {
     },
 
     -- indentation lines
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {},
+    {
+        "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {},
         config = function ()
             require('ibl').setup()
         end
     },
 
-    -- trouble
+    -- trouble plugin ( shows all erros in entire workspace or current file )
     {
         "folke/trouble.nvim",
 

@@ -11,7 +11,9 @@ mason.setup({
         "tsserver",
         "eslint",
         "lua_ls",
-}
+        "rust-analyzer",
+        "jsonls",
+    }
 })
 
 
@@ -29,6 +31,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     -- Buffer local mappings.
+    -- all keys are set as globle in whichkey.lua ( for now not attached when lsp buffer is active)
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     -- local opts = { buffer = ev.buf }
     -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
@@ -56,6 +59,7 @@ local lspconfig = require('lspconfig')
 lspconfig.pyright.setup{}
 lspconfig.eslint.setup{}
 lspconfig.lua_ls.setup{}
+lspconfig.rust_analyzer.setup{}
 
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
