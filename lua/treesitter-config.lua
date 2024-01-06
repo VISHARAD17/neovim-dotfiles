@@ -22,8 +22,12 @@ configs.setup {
         -- colors = {}, -- table of hex strings
         -- termcolors = {} -- table of colour name strings
     },
+    -- to complete html tags
     autotag = {
         enable = true,
+        enable_rename = true,
+        enable_close = true,
+        filetypes = {'html', 'xml', 'javascript', 'typescript'},
     },
 }
 

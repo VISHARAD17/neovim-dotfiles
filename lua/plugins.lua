@@ -86,21 +86,50 @@ return {
         branch = 'v1.x',
         dependencies = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {'williamboman/mason.nvim'},           -- Optional
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+            {'neovim/nvim-lspconfig',
+                event = {"BufReadPre", "BufNewFile"},
+                dependencies = {
+                    'folke/neodev.nvim',
+                },
+            },   
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},         -- Required
-            {'hrsh7th/cmp-nvim-lsp'},     -- Required
-            {'hrsh7th/cmp-buffer'},       -- Optional
-            {'hrsh7th/cmp-path'},         -- Optional
-            {'saadparwaiz1/cmp_luasnip'}, -- Optional
-            {'hrsh7th/cmp-nvim-lua'},     -- Optional
+            {
+                'hrsh7th/nvim-cmp', 
+                event = 'InsertEnter',
+            },
+            {
+                'hrsh7th/cmp-nvim-lsp',
+                event = 'InsertEnter',
+            },
+            {
+                'hrsh7th/cmp-buffer',
+                event = 'InsertEnter'
+            },
+            {
+                'hrsh7th/cmp-path',
+                event = 'InsertEnter'
+            },
+            {
+                'saadparwaiz1/cmp_luasnip',
+                event = 'InsertEnter',
+            },
+            {
+                'hrsh7th/cmp-nvim-lua',
+                event = 'InsertEnter'
+            },
 
             -- Snippets
-            {'L3MON4D3/LuaSnip'},             -- Required
-            {'rafamadriz/friendly-snippets'}, -- Optional
+            {
+                'L3MON4D3/LuaSnip',
+                event = 'InsertEnter',
+                dependencies = {
+                    "rafamadriz/friendly-snippets",
+                },
+            }, 
+            -- {'rafamadriz/friendly-snippets'}, -- Optional
         }
     },
 
@@ -152,5 +181,13 @@ return {
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
         },
+    },
+
+    -- auto-complete-tag
+    {
+        "windwp/nvim-ts-autotag",
+        config = function ()
+           require('nvim-ts-autotag').setup()
+        end
     }
 }

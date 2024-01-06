@@ -7,13 +7,17 @@ local mason = require('mason')
 mason.setup({
     ensure_installed = {
         "pyright",
-        "ruff",
         "tsserver",
         "eslint",
         "lua_ls",
+        "cssls",
         "rust-analyzer",
         "jsonls",
-    }
+    },
+
+    ui = {
+        border = "rounded",
+    },
 })
 
 
@@ -54,12 +58,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-local lspconfig = require('lspconfig')
+local lspconfig = require("lspconfig")
+-- local on_attach = require("lua.lsp-config").on_attach
+-- local capabilities = require('lua.lsp-config').capabilities
 
 lspconfig.pyright.setup{}
 lspconfig.eslint.setup{}
 lspconfig.lua_ls.setup{}
-lspconfig.rust_analyzer.setup{}
+lspconfig.rust_analyzer.setup({
+    filetypes = {"rust"},
+    settigs = {
+        ['rust-analyzer'] = {
+            cargo = {
+                allFeatures = true,
+            }
+        },
+    },
+})
 
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
