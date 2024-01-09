@@ -100,6 +100,7 @@ local mappings = {
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         i = { "<cmd>LspInfo<cr>", "Info" },
         a = { "<cmd> lua vim.lsp.buf.code_action()<cr>", "Code action"}, -- show available code actions
+        K = { "<cmd> lua vim.lsp.buf.hover()<cr>", "show documentation"}, -- shows documentation in a floating window
     },
 
     -- Telescope

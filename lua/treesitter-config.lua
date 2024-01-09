@@ -1,11 +1,11 @@
 -- treesitter-config.lua
 
-local configs = require("nvim-treesitter.configs")
-configs.setup {
+require("nvim-treesitter.configs").setup({
     -- Add a language of your choice
     ensure_installed = {"cpp", "python", "lua", "java", "javascript", "typescript", "html", "json", 'markdown', 'fortran', 'rust' },
-    sync_install = false,
-    ignore_install = { "" }, -- List of parsers to ignore installing
+    auto_install = true,
+    sync_install = true,
+
     highlight = {
         enable = true, -- false will disable the whole extension
         disable = { "" }, -- list of language that will be disabled
@@ -29,7 +29,7 @@ configs.setup {
         enable_close = true,
         filetypes = {'html', 'xml', 'javascript', 'typescript'},
     },
-}
+})
 
 -- code folding
 local opt = vim.opt

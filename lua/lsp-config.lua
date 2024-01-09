@@ -62,6 +62,7 @@ local lspconfig = require("lspconfig")
 -- local on_attach = require("lua.lsp-config").on_attach
 -- local capabilities = require('lua.lsp-config').capabilities
 
+-- setting up all language servers
 lspconfig.pyright.setup{}
 lspconfig.eslint.setup{}
 lspconfig.lua_ls.setup{}

@@ -12,10 +12,9 @@ return {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
-
     -- treesitter
     {
-       "nvim-treesitter/nvim-treesitter", build = ":TSUpdate"
+       "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
     },
 
     -- nvim tree ( file explorer)
@@ -67,6 +66,27 @@ return {
         end,
     },
 
+    -- coloscheme catpuccin
+    -- {
+    --     "catppuccin/nvim",
+    --     name = "catppuccin",
+    --     priority = 1000,
+    --     config = function ()
+    --        require("catppuccin").setup({
+    --             flavour = "mocha",
+    --             color_overrides = {
+    --                 mocha = {
+    --                     base = "#191919",
+    --                     crust = "#191919",
+    --                     mantle = "#191919",
+    --                 },
+    --             },
+    --         })
+    --         vim.cmd("colorscheme catppuccin")
+    --     end
+    --
+    -- },
+
      -- Bufferline
     {
         'akinsho/bufferline.nvim',
@@ -80,24 +100,20 @@ return {
     },
 
     -- Language Support
+    --  TODO : need to write separate files for autocomplition, snippits and lsp
     {
         'VonHeikemen/lsp-zero.nvim',
         lazy = true,
         branch = 'v1.x',
         dependencies = {
             -- LSP Support
-            {'neovim/nvim-lspconfig',
-                event = {"BufReadPre", "BufNewFile"},
-                dependencies = {
-                    'folke/neodev.nvim',
-                },
-            },   
+            {'neovim/nvim-lspconfig', event = {"BufReadPre", "BufNewFile"}, },
             {'williamboman/mason.nvim'},
             {'williamboman/mason-lspconfig.nvim'},
 
             -- Autocompletion
             {
-                'hrsh7th/nvim-cmp', 
+                'hrsh7th/nvim-cmp',
                 event = 'InsertEnter',
             },
             {
@@ -128,9 +144,16 @@ return {
                 dependencies = {
                     "rafamadriz/friendly-snippets",
                 },
-            }, 
-            -- {'rafamadriz/friendly-snippets'}, -- Optional
+            },
         }
+    },
+
+    -- new dev ( kind of better completion )
+    {
+        'folke/neodev.nvim',
+        config = function()
+            require("neodev").setup({})
+        end
     },
 
     -- telescope ( fuzzy finder for file or text searching )
@@ -143,9 +166,7 @@ return {
     {
         "kylechui/nvim-surround",
         config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
+            require("nvim-surround").setup({})
         end
     },
 
