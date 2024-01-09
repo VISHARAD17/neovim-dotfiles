@@ -27,65 +27,65 @@ return {
     },
 
     -- colorScheme
-    {
-        'Mofiqul/vscode.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            -- vim.o.background = 'dark'
-            -- For light theme
-            -- vim.o.background = 'light'
-
-            local c = require('vscode.colors').get_colors()
-            require('vscode').setup({
-                -- Alternatively set style in setup
-                style = 'dark',
-
-                -- Enable transparent background
-                transparent = false,
-
-                -- Enable italic comment
-                italic_comments = false,
-
-                -- Disable nvim-tree background color
-                disable_nvimtree_bg = false,
-
-                -- Override colors (see ./lua/vscode/colors.lua)
-                -- color_overrides = {
-                --     vscLineNumber = '#FFFFFF',
-                -- },
-
-                -- Override highlight groups (see ./lua/vscode/theme.lua)
-                group_overrides = {
-                    -- this supports the same val table as vim.api.nvim_set_hl
-                    -- use colors from this colorscheme by requiring vscode.colors!
-                    Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
-                }
-            })
-            require('vscode').load()
-        end,
-    },
+    -- {
+    --     'Mofiqul/vscode.nvim',
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         -- vim.o.background = 'dark'
+    --         -- For light theme
+    --         -- vim.o.background = 'light'
+    --
+    --         local c = require('vscode.colors').get_colors()
+    --         require('vscode').setup({
+    --             -- Alternatively set style in setup
+    --             style = 'dark',
+    --
+    --             -- Enable transparent background
+    --             transparent = false,
+    --
+    --             -- Enable italic comment
+    --             italic_comments = false,
+    --
+    --             -- Disable nvim-tree background color
+    --             disable_nvimtree_bg = false,
+    --
+    --             -- Override colors (see ./lua/vscode/colors.lua)
+    --             -- color_overrides = {
+    --             --     vscLineNumber = '#FFFFFF',
+    --             -- },
+    --
+    --             -- Override highlight groups (see ./lua/vscode/theme.lua)
+    --             group_overrides = {
+    --                 -- this supports the same val table as vim.api.nvim_set_hl
+    --                 -- use colors from this colorscheme by requiring vscode.colors!
+    --                 Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+    --             }
+    --         })
+    --         require('vscode').load()
+    --     end,
+    -- },
 
     -- coloscheme catpuccin
-    -- {
-    --     "catppuccin/nvim",
-    --     name = "catppuccin",
-    --     priority = 1000,
-    --     config = function ()
-    --        require("catppuccin").setup({
-    --             flavour = "mocha",
-    --             color_overrides = {
-    --                 mocha = {
-    --                     base = "#191919",
-    --                     crust = "#191919",
-    --                     mantle = "#191919",
-    --                 },
-    --             },
-    --         })
-    --         vim.cmd("colorscheme catppuccin")
-    --     end
-    --
-    -- },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        config = function ()
+           require("catppuccin").setup({
+                flavour = "mocha",
+                -- color_overrides = {
+                --     mocha = {
+                --         base = "#191919",
+                --         crust = "#191919",
+                --         mantle = "#191919",
+                --     },
+                -- },
+            })
+            vim.cmd("colorscheme catppuccin")
+        end
+
+    },
 
      -- Bufferline
     {
